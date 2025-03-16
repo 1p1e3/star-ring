@@ -1,0 +1,92 @@
+{
+    "report": [
+        {
+            "name": "funcs/test_build.py::test_build[login-1]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.007477200000721496,
+            "log": "",
+            "error": "case = 'login-1', request = <FixtureRequest for <Function test_build[login-1]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '未知错误'} == {'msg': '登录成功...en': '1a2b3c'}\nE             \nE             Differing items:\nE             {'msg': '未知错误'} != {'msg': '登录成功'}\nE             Right contains 1 more item:\nE             {'token': '1a2b3c'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[login-2]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.005203299999266164,
+            "log": "",
+            "error": "case = 'login-2', request = <FixtureRequest for <Function test_build[login-2]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '用户名或密码错误'} == {'msg': '登录失败'}\nE             \nE             Differing items:\nE             {'msg': '用户名或密码错误'} != {'msg': '登录失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[login-3]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.004515299999184208,
+            "log": "",
+            "error": "case = 'login-3', request = <FixtureRequest for <Function test_build[login-3]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '用户名或密码错误'} == {'msg': '登录失败'}\nE             \nE             Differing items:\nE             {'msg': '用户名或密码错误'} != {'msg': '登录失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[login-4]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.004635400000552181,
+            "log": "",
+            "error": "case = 'login-4', request = <FixtureRequest for <Function test_build[login-4]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '用户名或密码错误'} == {'msg': '登录失败'}\nE             \nE             Differing items:\nE             {'msg': '用户名或密码错误'} != {'msg': '登录失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[login-5]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.005589399999735178,
+            "log": "",
+            "error": "case = 'login-5', request = <FixtureRequest for <Function test_build[login-5]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '用户名或密码错误'} == {'msg': '登录失败'}\nE             \nE             Differing items:\nE             {'msg': '用户名或密码错误'} != {'msg': '登录失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[register-1]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.004775800000061281,
+            "log": "",
+            "error": "case = 'register-1'\nrequest = <FixtureRequest for <Function test_build[register-1]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '密码长度要在 8 - 16 之间'} == {'msg': '注册成功'}\nE             \nE             Differing items:\nE             {'msg': '密码长度要在 8 - 16 之间'} != {'msg': '注册成功'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[register-2]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.004484900000534253,
+            "log": "",
+            "error": "case = 'register-2'\nrequest = <FixtureRequest for <Function test_build[register-2]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '两次密码不一致'} == {'msg': '注册失败'}\nE             \nE             Differing items:\nE             {'msg': '两次密码不一致'} != {'msg': '注册失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[register-3]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.0046032000027480535,
+            "log": "",
+            "error": "case = 'register-3'\nrequest = <FixtureRequest for <Function test_build[register-3]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '请输入邮箱'} == {'msg': '注册失败'}\nE             \nE             Differing items:\nE             {'msg': '请输入邮箱'} != {'msg': '注册失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[register-4]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.007505099998525111,
+            "log": "",
+            "error": "case = 'register-4'\nrequest = <FixtureRequest for <Function test_build[register-4]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '请输入邮箱'} == {'msg': '注册失败'}\nE             \nE             Differing items:\nE             {'msg': '请输入邮箱'} != {'msg': '注册失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[register-5]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.005743199999415083,
+            "log": "",
+            "error": "case = 'register-5'\nrequest = <FixtureRequest for <Function test_build[register-5]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '两次密码不一致'} == {'msg': '注册失败'}\nE             \nE             Differing items:\nE             {'msg': '两次密码不一致'} != {'msg': '注册失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        },
+        {
+            "name": "funcs/test_build.py::test_build[register-6]",
+            "description": "",
+            "outcome": "failed",
+            "duration": 0.010096199999679811,
+            "log": "",
+            "error": "case = 'register-6'\nrequest = <FixtureRequest for <Function test_build[register-6]>>\n\n    @pytest.mark.parametrize(\"case\", cases, ids=[case_id for case_id in cases.keys()])\n    def test_build(case, request):\n        request.node.description = cases[case].get(\"desc\")\n    \n        res = request_build(cases.get(case))\n    \n        # 断言\n        assert res.status_code == cases.get(case).get(\"expectedStatusCode\")\n        expectedFields = cases.get(case).get(\"expectedFields\")\n        if res.json().get(\"token\") is not None:\n            assert expectedFields.get(\"token\") is not None\n        else:\n>           assert res.json() == cases[case].get(\"expectedFields\")\nE           AssertionError: assert {'msg': '两次密码不一致'} == {'msg': '注册失败'}\nE             \nE             Differing items:\nE             {'msg': '两次密码不一致'} != {'msg': '注册失败'}\nE             Use -v to get more diff\n\nfuncs\\test_build.py:25: AssertionError"
+        }
+    ]
+}

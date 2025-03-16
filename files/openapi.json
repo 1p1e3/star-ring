@@ -1,0 +1,216 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "用户认证 API",
+    "description": "提供用户登录和注册功能的 API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "本地开发服务器"
+    }
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "用户登录",
+        "description": "验证用户凭据并返回认证令牌",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              },
+              "examples": {
+                "validLogin": {
+                  "value": {
+                    "email": "test@gmail.com",
+                    "password": "00000"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "登录成功或失败的响应",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                },
+                "examples": {
+                  "success": {
+                    "value": {
+                      "msg": "登录成功",
+                      "token": "1a2b3c"
+                    }
+                  },
+                  "emptyCredentials": {
+                    "value": {
+                      "msg": "用户名或密码不能为空"
+                    }
+                  },
+                  "invalidCredentials": {
+                    "value": {
+                      "msg": "用户名或密码错误"
+                    }
+                  },
+                  "unsupportedEmail": {
+                    "value": {
+                      "msg": "暂不支持该邮箱"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "summary": "用户注册",
+        "description": "注册新用户并添加到系统",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              },
+              "examples": {
+                "validRegistration": {
+                  "value": {
+                    "email": "newuser@gmail.com",
+                    "password": "password123",
+                    "repassword": "password123"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "注册成功或失败的响应",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterResponse"
+                },
+                "examples": {
+                  "success": {
+                    "value": {
+                      "msg": "注册成功"
+                    }
+                  },
+                  "userExists": {
+                    "value": {
+                      "msg": "用户已存在"
+                    }
+                  },
+                  "emptyFields": {
+                    "value": {
+                      "msg": "用户名或密码不能为空"
+                    }
+                  },
+                  "invalidEmail": {
+                    "value": {
+                      "msg": "请输入邮箱"
+                    }
+                  },
+                  "unsupportedEmail": {
+                    "value": {
+                      "msg": "暂不支持该邮箱"
+                    }
+                  },
+                  "passwordMismatch": {
+                    "value": {
+                      "msg": "两次密码不一致"
+                    }
+                  },
+                  "invalidPasswordLength": {
+                    "value": {
+                      "msg": "密码长度要在 8 - 16 之间"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LoginRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "用户邮箱地址",
+            "example": "test@gmail.com"
+          },
+          "password": {
+            "type": "string",
+            "description": "用户密码",
+            "example": "00000"
+          }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string",
+            "description": "登录结果消息"
+          },
+          "token": {
+            "type": "string",
+            "description": "认证令牌，仅在登录成功时返回"
+          }
+        }
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "required": ["email", "password", "repassword"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "用户邮箱地址",
+            "example": "newuser@gmail.com"
+          },
+          "password": {
+            "type": "string",
+            "description": "用户密码",
+            "example": "password123",
+            "minLength": 8,
+            "maxLength": 16
+          },
+          "repassword": {
+            "type": "string",
+            "description": "重复输入的密码，必须与密码一致",
+            "example": "password123"
+          }
+        }
+      },
+      "RegisterResponse": {
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string",
+            "description": "注册结果消息"
+          }
+        }
+      }
+    }
+  }
+}

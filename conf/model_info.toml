@@ -1,0 +1,20 @@
+[gemini]
+model="gemini-2.0-flash"
+api_key=""
+
+[chatgpt]
+model=""
+api_key=""
+
+[claude]
+model=""
+api_key=""
+
+
+[deepseek]
+model=""
+api_key=""
+
+
+[other]
+# ...
