@@ -3,13 +3,14 @@ import subprocess
 
 import pytest
 
-from conf import TEST_CASE_PATH
+from conf import TEST_CASES_PATH
 from funcs.json_handler import read_case_from_json
 from funcs.request_build import request_build
 import subprocess
 
-
-cases = read_case_from_json(TEST_CASE_PATH)
+cases = {}
+if TEST_CASES_PATH.exists():
+    cases = read_case_from_json(TEST_CASES_PATH)
 
 from log.logger import Logger
 logger = Logger().get_logger()
