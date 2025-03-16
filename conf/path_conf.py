@@ -28,7 +28,7 @@ FILES_PATH = ROOT_PATH.joinpath('files')
 API_DOC_PATH = FILES_PATH.joinpath("openapi.json")
 
 # 测试用例
-TEST_CASE_PATH = FILES_PATH.joinpath('test_case.json')
+TEST_CASES_PATH = FILES_PATH.joinpath('test_cases.json')
 
 # 测试报告
-TEST_REPORT_PATH = FILES_PATH.joinpath('test_case.json')
+TEST_REPORT_PATH = FILES_PATH.joinpath('test_report.json')
