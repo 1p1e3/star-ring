@@ -56,5 +56,6 @@ class GeminiClient(BaseClient):
         with open(TEST_REPORT_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        res = self.chat.send_message("这是 json 格式的 pytest 框架的测试报告数据，请你总结归纳并返回结果\n" + str(data))
+        res = self.chat.send_message("这是 json 格式的 pytest 框架的测试报告数据，请你总结归纳并返回结果: \n" + str(data) +
+                                     "\n 你的总结要包含通过数、失败数、跳过数、通过率、失败率等信息，请换行输出这些信息")
         logger.info(f"测试结果统计: {res.text}")
